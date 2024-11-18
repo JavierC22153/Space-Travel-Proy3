@@ -26,5 +26,6 @@ Asegúrate de tener [Rust](https://www.rust-lang.org/) instalado en tu máquina 
 - W, S: Mueven la cámara verticalmente.  
 - A, D, Q, E: Desplazan la cámara en el espacio 3D (ejes X e Y).  
 - 1, 2, 3, 4:Teletransportan la cámara a destinos específicos predefinidos (Warp).
-
-![Video de demostración](./video/space.mp4)
+  
+## Video de demostración
+Puedes ver el video de demostración [aquí](https://drive.google.com/file/d/18SSeFhwyHffKI-MOWt2ec8-6ZWIjjyNN/view?usp=sharing)
