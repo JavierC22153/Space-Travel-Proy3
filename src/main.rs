@@ -1,6 +1,6 @@
 use nalgebra_glm::{Vec3, Mat4, look_at, perspective};
 use minifb::{Key, KeyRepeat, Window, WindowOptions};
-use std::time::{Instant, Duration};
+use std::time::Duration;
 use std::f32::consts::PI;
 use image::{open, DynamicImage, GenericImageView};
 use rand::Rng;
@@ -316,10 +316,6 @@ fn main() {
     let mut planets = generate_planets();
     let warp_destinations = define_warp_positions(&planets);
 
-    //Temporal
-    let mut last_print_time = Instant::now();
-    let print_interval = Duration::from_secs(10);
-
 
     let image = load_panoramic_image("assets/image/space.png");
     let (image_width, image_height) = image.dimensions();
@@ -387,15 +383,6 @@ fn main() {
         framebuffer.clear();
 
         update_planets(&mut planets, delta_time);
-
-        if last_print_time.elapsed() >= print_interval {
-            println!("Camera Position (eye): {:?}", camera.eye);
-            println!("Camera Target (center): {:?}", camera.center);
-            println!("Camera Up (up vector): {:?}", camera.up);
-
-            // Actualizar el tiempo de la última impresión
-            last_print_time = Instant::now();
-        }
 
         // Crear las matrices de transformación para la esfera
         let translation_sphere = Vec3::new(0.0, 0.0, 0.0);
